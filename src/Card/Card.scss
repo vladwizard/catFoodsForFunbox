@@ -1,0 +1,127 @@
+.card_block {
+  font-family: "Trebuchet MS";
+  font-style: normal;
+  font-weight: 400;
+
+  > main {
+    overflow: hidden;
+    clip-path: polygon(0 45px, 45px 0, 100% 0, 100% 100%, 0 100%);
+    position: relative;
+    width: 320px;
+    height: 509px;
+    background-position: bottom -88px right -24px;
+    background-repeat: no-repeat;
+    background: linear-gradient(135deg, var(--border-color) 30px, #f2f2f2 0);
+    border: 4px solid var(--border-color);
+    border-radius: 12px;
+
+    box-sizing: border-box;
+    cursor: pointer;
+    > header {
+      position: absolute;
+      left: 51px;
+      top: 21px;
+    }
+  }
+  > main > img {
+    margin-top: 208px;
+    margin-left: -24px;
+  }
+
+  .category {
+    font-size: 16px;
+    line-height: 19px;
+
+    margin-bottom: 5px;
+  }
+  .title {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 56px;
+  }
+  .taste {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+
+    margin-bottom: 15px;
+  }
+  .info {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    white-space: pre-line;
+  }
+  .weight {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    background-color: var(--border-color);
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    > *:first-child {
+      margin-top: 21px;
+      font-size: 42px;
+      line-height: 22px;
+    }
+    > *:last-child {
+      margin-top: 7px;
+      font-size: 22px;
+      line-height: 22px;
+    }
+  }
+  .description {
+    cursor: default;
+    width: 100%;
+    font-size: 13px;
+    line-height: 15px;
+    white-space: nowrap;
+    text-align: center;
+
+    margin-top: 14px;
+    .buy {
+      cursor: pointer;
+      color: var(--border-color);
+      text-decoration: none; /* Убираем подчеркивание */
+      border-bottom: 1px dashed var(--border-color); /* Добавляем свою линию */
+      & ~ * {
+        color: var(--border-color);
+      }
+    }
+  }
+}
+.card_block:not(.disabled) {
+  .category {
+    color: #666666;
+  }
+  .title {
+    color: #000000;
+  }
+  .taste {
+    color: #000000;
+  }
+  .info {
+    color: #666666;
+  }
+
+  .description {
+    color: #ffffff;
+  }
+}
+.card_block.disabled {
+  pointer-events: none;
+  user-select: none;
+  --border-color: #b3b3b3 !important;
+  img {
+    opacity: 0.5;
+  }
+  main > header > * {
+    color: #b3b3b3;
+  }
+  .description {
+    color: #ffff66;
+  }
+}
